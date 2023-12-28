@@ -1,0 +1,58 @@
+<span>
+<main>
+{{#if isLogged}}
+  <div id="box_container">
+    <ul id="open_dropdown">
+      <a href="#login" id='logoutbutton'>{{i18n 'Logout'}}</a>
+    </ul>
+  </div>
+
+  <h1>{{i18n 'Your are logged. Logout first'}}</h1>
+{{else}}
+  
+
+  <div id="box_container">
+    <ul id="login_languagechooser">{{i18n 'Loading...'}}</ul>
+      <div class="registrate">
+        <label>{{i18n 'Need an account?'}}</label>
+        <a href="#register" id='registerlink'>{{i18n 'Register now'}}</a>
+      </div>
+  </div>
+
+
+
+  <!-- title -->
+  <h1>{{ i18n 'Login' }}</h1>
+  <label class="error">{{#i18n}}{{loginError}}{{/i18n}}</label>
+
+  <!-- LOGIN FORM -->
+  <form class="formulario">
+
+    <!-- ALIAS of the user -->
+    <p>
+      <label>{{i18n 'Alias'}}</label>
+      <input type="text" id="login" placeholder="{{i18n 'Alias' }}">
+    </p>
+    
+    <!-- PASSWORD of the user -->
+    <p>
+      <label>{{i18n 'Password'}}</label>
+      <input type="password" id="password" placeholder="{{i18n 'Password' }}">
+    </p>
+    
+    <!-- Remember user -->
+    <div class="checkbox">
+      <input type="checkbox" id="rememberUser"><label>{{i18n 'Remember user' }}</label>
+    </div>
+
+    <input type="submit" id='loginbutton' value="{{i18n 'Login'}}">
+  </div>
+{{/if}}
+</main>
+
+<aside>
+  <h1>{{i18n 'Managing your expenses has never been so easy.'}}</h1>
+  <p>{{i18n 'Improve your performance with our analysis. Easy-to-use dashboards and real-time graphs, all at your disposal.'}}</p>
+</aside>
+
+</span>

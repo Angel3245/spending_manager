@@ -1,0 +1,81 @@
+#frontyapp{
+  background-color: var(--gh-white);
+}
+
+/* Flexbox: maincontent = Parent */
+#maincontent {
+  display: flex;  
+  flex-flow: row wrap;
+  text-align: center; 
+  min-height: 100vh;
+}
+
+/* maincontent's children */
+#maincontent > * {
+  padding: 15px;
+  flex: 1 100%;
+}
+
+/* Edit-user container */
+#maincontent main {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Edit-user form */
+.formulario{
+  background: none;
+  width: 65%;
+  display: flex;
+  flex-flow: column;
+  text-align: left;
+  row-gap: 15px;
+  padding: 5%;
+
+  border-radius: 16px;
+  min-width: 510px;
+  max-width: 620px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: var(--gh-white);
+}
+
+.formulario input[type=text],
+.formulario input[type=password]{
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+.formulario input[type=submit] {
+  margin-top: 40px;
+  margin-left: 10%;
+  margin-bottom: 10%;
+  width: 80%;
+}
+
+#deletebutton {
+  background-color: red;
+}
+
+#deletebutton:hover{
+  background-color: #ff6e84;
+}
+
+h1{
+  font-size: var(--font-size-welcome);
+  margin-bottom: 30px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #maincontent aside {order: 2;}
+  #maincontent main {order: 1;}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #maincontent aside {order: 1;flex: 1 1 0px;}
+  #maincontent main {order: 2;flex: 1 1 0px;}
+}

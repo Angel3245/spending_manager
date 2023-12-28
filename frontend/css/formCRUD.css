@@ -1,0 +1,230 @@
+main>* {
+    padding: 2.5em;
+}
+
+#flash {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+form.spends-form {
+    border-radius: 16px;
+    min-width: 510px;
+    min-height: 600px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: var(--gh-white);
+}
+
+.spends-form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "formTitle formTitle formTitle formTitle"
+    "typeArea typeArea dateArea dateArea"
+    "quantityArea quantityArea fileArea fileArea"
+    "descriptionArea descriptionArea descriptionArea descriptionArea"
+    "ownerArea ownerArea ownerArea ownerArea"
+    "submitButton submitButton submitButton submitButton";
+}
+
+.spends-form div {
+    padding: 1em;
+}
+
+
+
+
+
+.spends-form input[type="file"] {
+    display: none;
+}
+
+.spends-form .fileArea .fileButton:hover {
+    background-color: var(--acento-hover);
+    outline: 0;
+}
+
+.fileArea .fileButton{
+    font-size: var(--font-size-normal);
+    display: flex;
+    overflow: hidden;
+    height: 3.1em;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    background-color: var(--acento);
+    box-sizing: border-box;
+    border: none;
+    color: var(--gh-white);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
+    transition-property: background-color;
+    transition-duration: .4s;
+}
+
+div[class *= "Area"] label{
+    margin-bottom:8px;
+    font-size: var(--font-size-label);
+}
+
+.fileText,
+.fileIcon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 30px;
+    height: 100%;
+}
+
+.fileIcon {
+    text-align: right;
+    font-size: var(--font-size-normal);
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.iconUpload {
+    height: 36px;
+    width: 36px;
+}
+
+.formTitle{
+    grid-area: formTitle;
+    text-align: center;
+}
+
+.typeArea{
+    grid-area: typeArea;
+}
+
+.dateArea{
+    grid-area: dateArea;
+}
+
+.quantityArea{
+    grid-area: quantityArea;
+}
+
+.fileArea{
+    grid-area: fileArea;
+}
+
+.descriptionArea{
+    grid-area: descriptionArea;
+}
+
+.ownerArea{
+    grid-area: ownerArea;
+}
+
+.submitButton{
+    grid-area: submitButton;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitButton .cancel{
+    margin-left:30px;
+    font-size:    var(--font-size-button);
+    font-weight:  var(--font-weight-bold);
+    background-color: #f2f2f2;
+    
+    transition-property: background-color;
+    transition-duration: .4s;
+    border: none;
+    border-radius: 5px;
+    color: #585858;
+    text-align: center;
+    text-decoration: none;
+    width: var(--button-width-min);
+    height: var(--button-height-min);
+}
+
+button[type=button]:hover {
+    cursor: pointer;
+    background-color: rgb(183, 183, 183);
+  }
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 200px) {
+    main {
+        padding: 0 0;
+    }
+
+    .spends-form {
+        border-radius: 0px;
+        grid-template-areas:
+        "formTitle formTitle formTitle formTitle"
+        "typeArea typeArea typeArea typeArea"
+        "dateArea dateArea dateArea dateArea"
+        "quantityArea quantityArea quantityArea quantityArea"
+        "fileArea fileArea fileArea fileArea"
+        "descriptionArea descriptionArea descriptionArea descriptionArea"
+        "ownerArea ownerArea ownerArea ownerArea"
+        "submitButton submitButton submitButton submitButton";
+    }
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+
+    .spends-form {
+        border-radius: 16px;
+        grid-template-areas:
+        ". formTitle formTitle ."
+        "typeArea typeArea dateArea dateArea"
+        "quantityArea quantityArea fileArea fileArea"
+        "descriptionArea descriptionArea descriptionArea descriptionArea"
+        "ownerArea ownerArea ownerArea ownerArea"
+        "submitButton submitButton submitButton submitButton";
+    }
+}
+
+
+/* Small devices (tablets, 768px and up) */
+/* container width: 750 */
+@media(min-width: 768px) {
+    .spends-form {
+        width: 80%;
+    } 
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+/* container width: 970 */
+@media(min-width: 992px) {
+    .spends-form {
+        width: 60%;
+    } 
+
+    .spends-form {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        ". . formTitle formTitle . ."
+        "typeArea typeArea typeArea dateArea dateArea dateArea"
+        "quantityArea quantityArea quantityArea fileArea fileArea fileArea"
+        "descriptionArea descriptionArea descriptionArea descriptionArea descriptionArea descriptionArea"
+        "ownerArea ownerArea ownerArea ownerArea ownerArea ownerArea"
+        "submitButton submitButton submitButton submitButton submitButton submitButton";
+    }
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+/* container width: 1170px */
+@media (min-width: 1200px) {
+    .spends-form {
+        width: 50%;
+    }
+}

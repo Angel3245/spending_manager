@@ -1,0 +1,56 @@
+<span>
+<main>
+{{#if isLogged}}
+  <div id="box_container">
+    <ul id="open_dropdown">
+      <a href="#login" id='logoutbutton'>{{i18n 'Logout'}}</a>
+    </ul>
+  </div>
+
+  <h1>{{i18n 'Your are logged. Logout first'}}</h1>
+{{else}}
+  <!-- Register form -->
+  <!-- Already have an account? -->
+  <div id="box_container">
+    <ul id="register_languagechooser">{{i18n 'Loading...'}}</ul>
+      <div class="iniciasesion">
+      <label>{{i18n 'Already have an account?'}}</label>
+      <a href="#login" id='loginlink'>{{i18n 'Login'}}</a>
+    </div>
+  </div>
+
+  <!-- title -->
+  <h1>{{i18n 'New user'}}</h1>
+  <form class="formulario">
+    <!-- EMAIL of the user -->
+    <p>
+      <label>{{i18n 'Email'}}</label>
+      <input type="text" id="registeremail" placeholder="{{i18n 'Email' }}">
+      <label class="error">{{#i18n}}{{registerErrors.email}}{{/i18n}}</label>
+    </p>
+
+    <!-- ALIAS of the user -->
+    <p>
+      <label>{{i18n 'Alias'}}</label>
+      <input type="text" id="registerusername" placeholder="{{i18n 'Alias' }}">
+      <label class="error">{{#i18n}}{{registerErrors.alias}}{{/i18n}}</label>
+    </p>
+
+    <!-- PASSWORD of the user -->
+    <p>
+      <label>{{i18n 'Password'}}</label>
+      <input type="password" id="registerpassword" placeholder="{{i18n 'Password' }}">
+      <label class="error">{{#i18n}}{{registerErrors.passwd}}{{/i18n}}</label>
+    </p>
+
+    <input type="submit" id='registerbutton' value="{{i18n 'Register'}}">
+  </div>
+{{/if}}
+</main>
+
+<aside>
+  <h1>{{i18n 'Managing your expenses has never been so easy.'}}</h1>
+  <p>{{i18n 'Improve your performance with our analysis. Easy-to-use dashboards and real-time graphs, all at your disposal.'}}</p>
+</aside>
+
+</span>

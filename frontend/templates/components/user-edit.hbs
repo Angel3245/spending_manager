@@ -1,0 +1,38 @@
+<span>
+<main>
+  <!-- title -->
+  <h1>{{i18n 'Update user'}}</h1>
+{{#unless isLogged}}
+  {{i18n 'Log-in in order to update your info'}}
+{{else}}
+  <!-- User-edit form -->
+  <form class="formulario">
+    <!-- ALIAS of the user -->
+    <p>
+      <label>{{i18n 'Alias'}}</label>
+      <input type="text" id="registerusername" placeholder="{{i18n 'Alias' }}" value="{{userInfo.alias}}" disabled="disabled">
+      <label class="error">{{#i18n}}{{registerErrors.alias}}{{/i18n}}</label>
+    </p>
+
+    <!-- EMAIL of the user -->
+    <p>
+      <label>{{i18n 'Email'}}</label>
+      <input type="text" id="registeremail" placeholder="{{i18n 'Email' }}" value="{{userInfo.email}}">
+      <label class="error">{{#i18n}}{{registerErrors.email}}{{/i18n}}</label>
+    </p>
+
+    <!-- PASSWORD of the user -->
+    <p>
+      <label>{{i18n 'Password'}}</label>
+      <input type="password" id="registerpassword" placeholder="{{i18n 'Password' }}">
+      <label class="error">{{#i18n}}{{registerErrors.passwd}}{{/i18n}}</label>
+    </p>
+
+    <input type="submit" id='updatebutton' value="{{i18n 'Update'}}">
+    <input type="submit" id="deletebutton" value="{{i18n 'Delete my account'}}" />
+
+  </div>
+{{/unless}}
+</main>
+
+</span>

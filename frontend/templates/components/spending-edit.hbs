@@ -1,0 +1,61 @@
+  <main>
+    <form class="spends-form" id="form_edit_spending" action="" method="POST" enctype="multipart/form-data">
+      
+      <!-- Title of the form -->
+      <div class="formTitle">
+        <h1>{{i18n "Edit Spending" }}</h1>
+      </div>
+  
+      <!-- TYPE of the spending -->
+      <div class="typeArea">
+        <label>{{i18n 'Type of Spending'}}</label>
+        <select name="type" id="type_spending">
+          <option value="FOOD" {{#if_eq selectedSpending.type_spending "FOOD"}}selected{{/if_eq}}>{{i18n 'Food'}}</option>
+          <option value="FUEL" {{#if_eq selectedSpending.type_spending "FUEL"}}selected{{/if_eq}}>{{i18n 'Fuel'}}</option>
+          <option value="COMMUNICATIONS" {{#if_eq selectedSpending.type_spending "COMMUNICATIONS"}}selected{{/if_eq}}>{{i18n 'Communications'}}</option>
+          <option value="SUPPLIES" {{#if_eq selectedSpending.type_spending "SUPPLIES"}}selected{{/if_eq}}>{{i18n 'Supplies'}}</option>
+          <option value="FREE TIME" {{#if_eq selectedSpending.type_spending "FREE TIME"}}selected{{/if_eq}}>{{i18n 'Free Time'}}</option>
+        </select>
+        <label class="error">{{#i18n}}{{errors.type}}{{/i18n}}</label>
+      </div>
+  
+      <!-- DATE of the spending -->
+      <div class="dateArea">
+        <label>{{i18n 'Date'}}</label>
+        <input type="date" name="date" value="{{selectedSpending.date_spending}}" id="date_spending">
+        <label class="error">{{#i18n}}{{errors.date}}{{/i18n}}</label>
+      </div>
+  
+      <!-- QUANTITY of the spending -->
+      <div class="quantityArea">
+        <label>{{i18n 'Quantity'}}</label>
+        <input type="text" name="qty" placeholder="###.##" id="qty_spending" value="{{selectedSpending.qty_spending}}">
+        <label class="error">{{#i18n}}{{errors.qty}}{{/i18n}}</label>
+      </div>
+  
+      <div class="fileArea">
+            <label>{{i18n 'Document Name'}}</label>
+            <label for="doc_name_spending" class="fileButton">
+                <span id="fileText" class="fileText">{{#if selectedSpending.doc_name_spending}}{{selectedSpending.doc_name_spending}}{{else}}{{i18n 'Upload File'}}{{/if}}</span>
+                <span class="fileIcon">
+                <input type="file" name="doc_name" id="doc_name_spending">
+                    <img src="css/icons/uploadfile.svg" alt="{{i18n 'Upload'}}" class="iconUpload">
+                </span>
+            </label>
+            <label class="error">{{#i18n}}{{errors.doc_name}}{{/i18n}}</label>
+        </div>
+  
+      <!-- DESCRIPTION of the spending -->
+      <div class="descriptionArea">
+        <label>{{i18n 'Description'}}</label>
+        <textarea name="description" rows="3" placeholder="{{i18n 'Detail the Spending...'}}" id="description_spending">{{selectedSpending.description_spending}}</textarea>
+        <label class="error">{{#i18n}}{{errors.description}}{{/i18n}}</label>
+      </div>
+  
+      <div class="submitButton">
+        <input type="submit" name="submit" id="edit_button" value="{{i18n 'Edit'}}">
+        <button type="button" class="cancel" id="back_button">{{i18n 'Back'}}</button>
+        
+      </div>
+    </form>
+  </main>

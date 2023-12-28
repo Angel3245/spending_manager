@@ -1,0 +1,84 @@
+{{!-- <div>
+  {{i18n 'Type of Spending'}}:<input type="text" value="{{selectedSpending.type}}">
+  {{#i18n}}{{errors.type}}{{/i18n}}<br>
+
+  {{i18n 'Date'}}:<input type="text" id="date_spending" value="{{selectedSpending.date}}">
+  {{#i18n}}{{errors.date}}{{/i18n}}<br>
+
+  {{i18n 'Quantity'}}:<input type="text" id="qty_spending" value="{{selectedSpending.qty}}">
+  {{#i18n}}{{errors.qty}}{{/i18n}}<br>
+  
+  {{i18n 'Description'}}:<br><textarea id="desc_spending" rows="10" cols="40">{{selectedSpending.desc}}</textarea>
+  {{#i18n}}{{errors.desc}}{{/i18n}}<br>
+  
+  <input type="button" id="savebutton" value="{{i18n 'Save'}}"></input>
+</div>
+ --}}
+<main>
+  <form class="spends-form" id="form_add_spending" action="" method="POST">
+    
+    <!-- Title of the form -->
+    <div class="formTitle">
+      <h1>{{i18n "Add Spending" }}</h1>
+    </div>
+
+    <!-- TYPE of the spending -->
+    <div class="typeArea">
+      <label>{{i18n 'Type of Spending'}}</label>
+      <select name="type" id="type_spending">
+        <option value="FOOD">{{i18n 'Food'}}</option>
+        <option value="FUEL">{{i18n 'Fuel'}}</option>
+        <option value="COMMUNICATIONS">{{i18n 'Communications'}}</option>
+        <option value="SUPPLIES">{{i18n 'Supplies'}}</option>
+        <option value="FREE TIME">{{i18n 'Free Time'}}</option>
+      </select>
+      <label class="error">{{#i18n}}{{errors.type}}{{/i18n}}</label>
+    </div>
+
+    <!-- DATE of the spending -->
+    <div class="dateArea">
+      <label>{{i18n 'Date'}}</label>
+      <input type="date" name="date" value="{{current_date}}" id="date_spending">
+      <label class="error">{{#i18n}}{{errors.date}}{{/i18n}}</label>
+    </div>
+
+    <!-- QUANTITY of the spending -->
+    <div class="quantityArea">
+      <label>{{i18n 'Quantity'}}</label>
+      <input type="text" name="qty" placeholder="###.##" id="qty_spending">
+      <label class="error">{{#i18n}}{{errors.qty}}{{/i18n}}</label>
+    </div>
+
+    <div class="fileArea">
+          <label>{{i18n 'Document Name'}}</label>
+          <label for="doc_name_spending" class="fileButton">
+              <span id="fileText" class="fileText">{{i18n 'Upload File'}}</span>
+              <span class="fileIcon">
+              <input type="file" name="doc_name" id="doc_name_spending">
+                  <img src="css/icons/uploadfile.svg" alt="{{i18n 'Upload'}}" class="iconUpload">
+              </span>
+          </label>
+          <label class="error">{{#i18n}}{{errors.doc_name}}{{/i18n}}</label>
+      </div>
+
+    <!-- DESCRIPTION of the spending -->
+    <div class="descriptionArea">
+      <label>{{i18n 'Description'}}</label>
+      <textarea name="description" rows="3" placeholder="{{i18n 'Detail the Spending...'}}" id="description_spending"></textarea>
+      <label class="error">{{#i18n}}{{errors.description}}{{/i18n}}</label>
+    </div>
+
+    <!-- OWNER of the spending -->
+    {{#if_eq user.role 'admin'}}<div class="ownerArea">
+      <label>{{i18n 'Owner'}}</label>
+      <input type="text" name="owner" placeholder={{i18n "Owner"}} id="owner_spending">
+      <label class="error">{{#i18n}}{{errors.owner}}{{/i18n}}</label>
+    </div>{{/if_eq}}
+
+    <div class="submitButton">
+      <input type="submit" name="submit" id="add_button" value="{{i18n 'Add'}}">
+      <button type="button" class="cancel" id="back_button">{{i18n 'Back'}}</button>
+      
+    </div>
+  </form>
+</main>

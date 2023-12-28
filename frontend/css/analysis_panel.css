@@ -1,0 +1,99 @@
+main .chart_form{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "titulo"
+        "fechas"
+        "showHideColumns"
+        "submit";
+
+    background-color: var(--gh-white);
+}
+
+/* HEADER1 */
+#analysis_panel_h1{
+    grid-area:titulo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top:30px;
+    margin-bottom:15px;
+}
+
+.line-separator{
+    margin-top:10px;
+    border-bottom: 1.75px solid black;
+    width: 25%;
+    box-shadow: none;
+}
+
+/* DATES = {DATE1, DATE2} */
+.fechas_container{
+    grid-area: fechas;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:35px;
+    align-items: center;
+    margin-top:20px;
+    margin-bottom:20px;
+    word-wrap: break-word;
+
+}
+
+/* SHOW/HIDE COLUMNS */
+#list1{
+    grid-area: showHideColumns;
+    font-size: var(--font-size-label);
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+#list1 .types{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap:25px;
+}
+
+#list1 .types li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SUBMIT */
+.submitButton{
+    grid-area: submit;
+    display: flex;
+    justify-content: center;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.ckbox{
+    margin-right: 10px;
+}
+
+div[class *= "Area"] label{
+    margin-bottom:8px;
+    font-size: var(--font-size-label);
+}
+
+div[class *= "Area"] .error{
+    margin-top:8px;
+    font-size: var(--font-size-label);
+}
+
+.fechas_container div[class *= "Area"] input{
+    width: var(--button-width-max);
+}
+
+
+
+
+

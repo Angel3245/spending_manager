@@ -1,0 +1,234 @@
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+ @font-face {
+  font-family: 'Unica77';
+  src: local('Unica77'), url(fonts/Unica77LLWeb-Regular.woff2) format('woff2');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul li{
+  list-style:none;
+}
+
+
+:root {
+  --acento:#006eed;
+  --acento-hover:#54A3FF;
+  --acento-focus:#145874;
+  --background-color:#F5F6F7;
+  --input-focus: #F1F3F4;
+  --input-background:#F5F7FB;
+  --input-radius-color:#d5d7db;
+  --gh-white: #FFF;
+  --gh-black: #24292e;
+  --gh-flash: #52878E;
+
+  --font-weight-normal:400;
+  --font-weight-bold:600;
+  --font-family: 'Inter','Unica77','sans-serif';
+  --font-size-welcome:2.7em;
+  --font-size-title: 25px;
+  --font-size-label: 16px;
+  --font-size-normal: 14px;
+  --font-size-button: 16px;
+
+  --border-radius-input: 5px;
+  --border-radius-button: 30px;
+
+  --button-width-min:150px;
+  --button-height-min:2.4em;
+  --button-width-max:250px;
+  --button-height-max:3em;
+
+
+}
+
+body {
+  background: var(--background-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size-normal);
+  letter-spacing: 0.25px;
+}
+
+h1{
+  font-weight:  var(--font-weight-bold);
+}
+
+form input[type="checkbox"]{
+  height: 20px;
+  width: 20px;
+  user-select: none;
+  position: relative;
+  cursor: pointer;
+  transition: -webkit-transform .1s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* FORM'S INPUT TYPE TEXT */
+form input[type=text], form input[type=date], form input[type=password], 
+form textarea, form select
+{
+  font-size: var(--font-size-normal);
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid var(--input-radius-color);
+  border-radius: var(--border-radius-input);
+  background-color: var(--input-background);
+}
+
+/* FORM'S INPUT TYPE BUTTON */
+form input[type=submit], input[type=button] {
+  font-size:    var(--font-size-button);
+  font-weight:  var(--font-weight-bold);
+  background-color: var(--acento);
+  
+  transition-property: background-color;
+  transition-duration: .4s;
+  border: none;
+  border-radius: var(--border-radius-button);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  width: var(--button-width-min);
+  height: var(--button-height-min);
+}
+
+/* form input[type=text]:focus, form input[type=date]:focus, form input[type=password]:focus, 
+form textarea:focus{
+  background-color: var(--input-focus);
+} */
+
+form input[type=submit]:hover, 
+input[type=button]:hover {
+  cursor: pointer;
+  background-color: var(--acento-hover);
+}
+
+/* Checkbox container: checkbox + label */
+form .checkbox input[type="checkbox"] {
+  margin-right: 4px;
+}
+
+form .checkbox label {
+  display: inline;
+}
+
+form label {
+  display: block;
+}
+
+form textarea {
+  resize: none;
+  font-family: inherit;
+}
+
+footer {
+  background-color: var(--acento);
+  color: var(--gh-white);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content : space-around;
+  padding: 2%;
+}
+
+footer>* {
+  padding: 10px;
+}
+
+.footerInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0;
+  width: 100%;
+}
+
+.authors {
+  width: 50%;
+  text-align: center;
+  border-right: 1px solid var(--gh-white);
+}
+
+.contacts {
+  width: 50%;
+  text-align: center;
+}
+
+.subject {
+  padding: 0;
+  margin-top: 35px;
+}
+
+.footerInfo ul {
+  list-style-type: none;
+}
+
+.contacts a img {
+  width: 36px;
+  height: 36px;
+}
+
+.error {
+  color: red;
+}
+
+
+
+#flash {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color:var(--gh-white);
+  width: 30%;
+  z-index: 400;
+  bottom:10px;
+  right: 13px;
+  position: fixed;
+  box-shadow: rgba(0,0,0,.19) 0 10px 20px,rgba(0,0,0,.23) 0 6px 6px;
+  border-radius: var(--border-radius-input);
+  overflow: hidden;
+  /* animation: backgroundflash 60s forwards;  */
+}
+
+#flash .flash_message{
+  color:var(--gh-flash);
+  text-align: center;
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  margin-left: 20px;
+  font-size: var(--font-size-label);
+}
+
+#flash {
+  animation: flash_animation 3.25s forwards; /* this triggers the animation */
+}
+
+@keyframes flash_animation {
+  0% {
+    bottom: 50px;
+    opacity: 1.0;
+  }
+  
+  70% {
+    bottom:50px;
+    opacity: 1.0;
+  }
+
+  60% {
+    bottom:15px;
+    opacity: 1.0;
+  }
+  100%{
+    bottom:15px;
+    opacity:0.0;
+  }
+}

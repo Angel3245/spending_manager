@@ -1,0 +1,67 @@
+<main>
+    {{#unless user.isLogged}}
+        <div id="analysis_panel_h1">
+            <h1>{{i18n 'Analysis Panel'}}</h1>
+            <div class="line-separator"></div>
+            <label>{{i18n 'Log-in in order to show your analysis panel'}}</label>
+        </div>
+    {{else}}
+        <form class="chart_form" action="" method="GET">
+            <div id="analysis_panel_h1">
+                <h1>{{i18n 'Analysis Panel'}}</h1>
+                <div class="line-separator"></div>
+            </div>
+            <!-- DATE START of the spending -->
+            
+            <div class="fechas_container">
+                <div class="date1Area">
+                    <label>{{i18n 'Starting Date'}}</label>
+                    <input type="date" name="date1" id="date1"
+                        value="2022-01-01">
+                    <label class="error">{{#i18n}}{{errors.date1}}{{/i18n}}</label>
+                </div>
+        
+                <!-- DATE END of the spending -->
+                <div class="date2Area">
+                    <label>{{i18n 'Ending Date'}}</label>
+                    <input type="date" name="date2" id="date2"
+                        value="2022-12-31">
+                    <label class="error">{{#i18n}}{{errors.date2}}{{/i18n}}</label>
+                </div>
+            </div>
+        
+            <div id="list1" class="dropdown-check-list" tabindex="100">
+                <ul class="types">
+                    <li><input type="checkbox" id="food_chk" name="food_chk" class="ckbox" checked="checked"/>{{i18n 'Food'}}</li>
+                    <li><input type="checkbox" id="fuel_chk" name="fuel_chk" class="ckbox" checked="checked"/>{{i18n 'Fuel'}}</li>
+                    <li><input type="checkbox" id="comm_chk" name="comm_chk" class="ckbox" checked="checked"/>{{i18n 'Communications'}}</li>
+                    <li><input type="checkbox" id="supp_chk" name="supp_chk" class="ckbox" checked="checked"/>{{i18n 'Supplies'}}</li>
+                    <li><input type="checkbox" id="ft_chk" name="ft_chk" class="ckbox" checked="checked"/>{{i18n 'Free Time'}}</li>
+                </ul>
+            </div>
+        
+            <div class="submitButton">
+                <input type="button" name="submit" id="submitAnalisys" value="{{i18n 'Send'}}">
+            </div>
+        
+        </form>
+        
+        <div id="graficas">
+            <figure class="highcharts-figure" id="grafico_lineas">
+                <div id="container-grafico-lineas"></div>
+                <p class="highcharts-description">
+                    <!-- Gastos en los últimos doce meses, separado por tipo de gasto. -->
+                </p>
+            </figure>
+        
+            <figure class="highcharts-figure" id="grafico_tarta">
+                <div id="container-grafico-tarta"></div>
+                <p class="highcharts-description">
+                    <!-- Pie charts are very popular for showing a compact overview of a
+                    composition or comparison. While they can be harder to read than
+                    column charts, they remain a popular choice for small datasets. -->
+                </p>
+            </figure>
+        </div>
+    {{/unless}}
+</main>

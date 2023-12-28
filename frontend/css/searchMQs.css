@@ -1,0 +1,9 @@
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .fechas_container{
+        flex-direction: row;
+    }
+    #list1 .types{
+        flex-direction: row;
+    }
+}
